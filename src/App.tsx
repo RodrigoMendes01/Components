@@ -1,6 +1,16 @@
+import { Button } from "./components/Button"
+
 function App() {
   return (
-    <h1>Components</h1>
+    <>
+      <Button
+        isLoading
+        bgColor='#5061fc'
+        hoverColor='#6674f4'    
+      >
+        Cadastrar
+      </Button>
+    </>
   )
 }
 
