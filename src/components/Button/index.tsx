@@ -1,26 +1,21 @@
+import { ComponentProps } from 'react'
 import { Spinner } from '../Spinner'
-import { Container } from './styles'
+import { cn } from '../../app/utils/cn'
 
-export interface ButtonProps {
-  children: string
-  type?: string
-  isLoading?: boolean
-  bgColor: string
-  hoverColor: string
-  width?: number
+interface ButtonProps extends ComponentProps<'button'> {
+  isLoading: boolean
 }
 
-export function Button ({ children, isLoading, bgColor, hoverColor, width }: ButtonProps) {
+export function Button ({ isLoading, className, ...props  }: ButtonProps) {
   return (
-    <Container
-      bgColor={bgColor}
-      hoverColor={hoverColor}
-      width={width}
+    <button
+      {...props}
+      className={cn("flex items-center justify-center uppercase w-full h-14 px-6 rounded-lg text-white text-base font-bold bg-blue-700 shadow-lg transition-all hover:bg-blue-800", className)}
     >
       {isLoading 
-      ? <Spinner size={30} bgColor='#DEE2E6' spinColor='#1864AB'/> 
-      : children
+      ? <Spinner className='w-7 h-7'/> 
+      : (props.children)
       }
-    </Container>
+    </button>
   )
 }
