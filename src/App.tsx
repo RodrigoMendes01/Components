@@ -1,16 +1,10 @@
-import { Button } from "./components/Button"
+import './app/styles/index.css'
 
 function App() {
   return (
-    <>
-      <Button
-        isLoading
-        bgColor='#5061fc'
-        hoverColor='#6674f4'    
-      >
-        Cadastrar
-      </Button>
-    </>
+    <div>
+      
+    </div>
   )
 }
 
